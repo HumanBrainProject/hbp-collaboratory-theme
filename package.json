@@ -1,6 +1,6 @@
 {
   "name": "collaboratory-theme",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A Bootstrap 3 theme for Collaboratory Extension",
   "main": "index.js",
   "scripts": {
