@@ -5,7 +5,15 @@
     "Olivier Amblet <olivier.amblet@epfl.ch>"
   ],
   "description": "A Bootstrap 3 Theme for HBP Collaboratory Extensions",
-  "main": ["dist/sass/theme.scss", "dist/css/bootstrap.css"],
+  "main": [
+    "dist/sass/theme.scss",
+    "dist/css/bootstrap.css",
+    "dist/fonts/glyphicons-halflings-regular.eot",
+    "dist/fonts/glyphicons-halflings-regular.svg",
+    "dist/fonts/glyphicons-halflings-regular.ttf",
+    "dist/fonts/glyphicons-halflings-regular.woff",
+    "dist/fonts/glyphicons-halflings-regular.woff2"
+  ],
   "homepage": "https://bbpcode.epfl.ch/code/#/admin/projects/platform/hbp/collaboratory-theme",
   "license": "-",
   "ignore": [

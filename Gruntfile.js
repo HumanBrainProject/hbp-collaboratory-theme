@@ -86,14 +86,14 @@ module.exports = function (grunt) {
     watch: {
       sass: {
         files: ['sass/*.sass'],
-        tasks: ['sass:dist', 'scsslint:sass'],
+        tasks: ['sass:dist'],
         options: {
           livereload: true
         }
       },
-      cssmin: {
+      rebuild: {
         files: ['.tmp/dist/css/bootstrap.css'],
-        tasks: 'cssmin:minify'
+        tasks: ['scsslint:sass', 'cssmin:minify', 'copy:ci']
       },
       assemble: {
         files: ['pages/*.html', 'pages/examples/*', 'README.md'],
