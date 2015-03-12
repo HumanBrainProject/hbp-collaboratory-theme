@@ -1,0 +1,21 @@
+{
+  "name": "collaboratory-theme",
+  "version": "0.0.1",
+  "authors": [
+    "Olivier Amblet <olivier.amblet@epfl.ch>"
+  ],
+  "description": "A Bootstrap 3 Theme for HBP Collaboratory Extensions",
+  "main": ["dist/sass/theme.scss", "dist/css/bootstrap.css"],
+  "homepage": "https://bbpcode.epfl.ch/code/#/admin/projects/platform/hbp/collaboratory-theme",
+  "license": "-",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap-sass": "~3.3.3"
+  }
+}
