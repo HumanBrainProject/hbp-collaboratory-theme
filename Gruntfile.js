@@ -14,10 +14,19 @@ module.exports = function (grunt) {
     // Build Tasks
     // -----------
 
+    scsslint: {
+      sass: ['sass/theme.scss'],
+      options: {
+        bundleExec: true,
+        reporterOutput: 'reports/scss-lint-report.xml',
+        colorizeOutput: true
+      },
+    },
+
     sass: {
       options: {
         sourceMap: true,
-        includePaths: ['sass', '<%= bowerDirectory %>/bootstrap-sass/assets/stylesheets']
+        includePaths: ['<%= bowerDirectory %>']
       },
       dist: {
         files: {
@@ -58,10 +67,16 @@ module.exports = function (grunt) {
           // all sass file to dist/sass
           {expand: true, src: ['sass/*'], dest: 'dist/'}
         ]
+      },
+      fonts: {
+        files: [
+          // copy Bootstrap fonts
+          {expand: true, cwd: 'bower_components/bootstrap-sass/assets/fonts/bootstrap', src: ['**'], dest: '.tmp/dist/fonts'},
+        ]
       }
     },
 
-    clean: ['dist', '.tmp'],
+    clean: ['dist', '.tmp', 'reports'],
 
 
     // -----------------------
@@ -71,7 +86,7 @@ module.exports = function (grunt) {
     watch: {
       sass: {
         files: ['sass/*.sass'],
-        tasks: ['sass:dist'],
+        tasks: ['sass:dist', 'scsslint:sass'],
         options: {
           livereload: true
         }
@@ -114,9 +129,6 @@ module.exports = function (grunt) {
         commitLink: function(h) { return 'https://bbpteam.epfl.ch/reps/gerrit/platform/hbp/collaboratory-theme/commit/?id='+h; },
         issueLink: function(issueId) { return 'https://bbpteam.epfl.ch/project/issues/browse/' + issueId; }
       }
-    },
-    exec: {
-      npmTag: 'npm tag <%= pkg.name %>@<%= pkg.version %> latest'
     }
   });
 
@@ -132,12 +144,12 @@ module.exports = function (grunt) {
     var tasks = ['default', 'copy:ci'];
     if (target === 'patch' || target === 'minor' || target === 'major') {
       tasks.unshift('bump-only:'+target);
-      tasks.push('changelog', 'bump-commit', 'exec:npmTag');
+      tasks.push('changelog', 'bump-commit');
     }
     grunt.task.run(tasks);
   });
 
-  grunt.registerTask('serve', ['connect', 'watch']);
+  grunt.registerTask('serve', ['clean', 'sass', 'copy:fonts', 'assemble', 'connect', 'watch']);
 
-  grunt.registerTask('default', ['clean', 'sass', 'cssmin', 'assemble']);
+  grunt.registerTask('default', ['clean', 'scsslint', 'sass', 'cssmin', 'copy:fonts', 'assemble']);
 };
