@@ -128,6 +128,12 @@ module.exports = function (grunt) {
       }
     },
 
+    gitadd: {
+      dist: {
+        files: { 'src': ['dist'] }
+      }
+    },
+
     gitcommit: {
       dist: {
         options: {
@@ -144,6 +150,14 @@ module.exports = function (grunt) {
         options: {
           tag: '<%=pkg.version%>',
           message: 'Version <%=pkg.version%> release'
+        }
+      }
+    },
+
+    gitpush: {
+      dist: {
+        options: {
+          tags: true
         }
       }
     },
@@ -168,7 +182,7 @@ module.exports = function (grunt) {
     var tasks = ['default', 'copy:ci'];
     if (target === 'patch' || target === 'minor' || target === 'major') {
       tasks.unshift('bump-only:'+target);
-      tasks.push('changelog', 'bump-commit', 'gitcommit:dist', 'gittag:dist');
+      tasks.push('changelog', 'bump-commit', 'gitadd:dist','gitcommit:dist', 'gittag:dist', 'gitpush:dist');
     }
     grunt.task.run(tasks);
   });
