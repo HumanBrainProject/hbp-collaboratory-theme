@@ -72,6 +72,8 @@ module.exports = function (grunt) {
         files: [
           // copy Bootstrap fonts
           {expand: true, cwd: 'bower_components/bootstrap-sass/assets/fonts/bootstrap', src: ['**'], dest: '.tmp/dist/fonts'},
+          // copy Gotham fonts
+          {expand: true, cwd: 'assets/fonts', src: ['**'], dest: '.tmp/dist/fonts'},
         ]
       }
     },
