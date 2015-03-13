@@ -123,9 +123,31 @@ module.exports = function (grunt) {
         files: ['package.json', 'bower.json'],
         updateConfigs: ['pkg'],
         commitFiles: ['package.json', 'bower.json', 'CHANGELOG.md'],
-        pushTo: 'origin HEAD:master'
+        pushTo: 'origin HEAD:master',
+        createTag: false
       }
     },
+
+    gitcommit: {
+      dist: {
+        options: {
+          message: 'built artefact',
+          ignoreEmpty: true,
+          force: true
+        },
+        files: { 'src': ['dist/**/*'] }
+      }
+    },
+
+    gittag: {
+      dist: {
+        options: {
+          tag: '<%=pkg.version%>',
+          message: 'Version <%=pkg.version%> release'
+        }
+      }
+    },
+
     changelog: {
       options: {
         commitLink: function(h) { return 'https://bbpteam.epfl.ch/reps/gerrit/platform/hbp/collaboratory-theme/commit/?id='+h; },
@@ -146,7 +168,7 @@ module.exports = function (grunt) {
     var tasks = ['default', 'copy:ci'];
     if (target === 'patch' || target === 'minor' || target === 'major') {
       tasks.unshift('bump-only:'+target);
-      tasks.push('changelog', 'bump-commit');
+      tasks.push('changelog', 'bump-commit', 'gitcommit:dist', 'gittag:dist');
     }
     grunt.task.run(tasks);
   });
