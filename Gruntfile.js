@@ -26,7 +26,7 @@ module.exports = function (grunt) {
     sass: {
       options: {
         sourceMap: true,
-        includePaths: ['<%= bowerDirectory %>']
+        includePaths: ['<%= bowerDirectory %>/bootstrap-sass/assets/stylesheets']
       },
       dist: {
         files: {
@@ -65,13 +65,20 @@ module.exports = function (grunt) {
           // all .tmp/dist directory
           {expand: true, cwd: '.tmp/dist', src: ['**'], dest: 'dist/'},
           // all sass file to dist/sass
-          {expand: true, src: ['sass/*'], dest: 'dist/'}
+          {expand: true, src: ['sass/*'], dest: 'dist/'},
+          // Bootstrap sass files
+          {
+            expand: true,
+            cwd: '<%= bowerDirectory %>/bootstrap-sass/assets/stylesheets',
+            src: ['**', '!_bootstrap-*.scss'],
+            dest: 'dist/sass/'
+          }
         ]
       },
       fonts: {
         files: [
           // copy Bootstrap fonts
-          {expand: true, cwd: 'bower_components/bootstrap-sass/assets/fonts/bootstrap', src: ['**'], dest: '.tmp/dist/fonts'},
+          {expand: true, cwd: '<%= bowerDirectory %>/bootstrap-sass/assets/fonts/bootstrap', src: ['**'], dest: '.tmp/dist/fonts'},
           // copy Gotham fonts
           {expand: true, cwd: 'assets/fonts', src: ['**'], dest: '.tmp/dist/fonts'},
         ]

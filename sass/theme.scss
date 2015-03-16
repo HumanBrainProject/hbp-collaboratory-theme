@@ -1,5 +1,27 @@
-@import './variables';
-@import './gotham';
-@import 'bootstrap-sass/assets/stylesheets/bootstrap';
+@import 'variables';
+@import 'gotham';
+@import 'bootstrap';
 
-// fix inverted navbar
+// ----------------------------------
+// CSS Fixes
+// ---------
+
+// Position radios and checkboxes better
+.radio *[type="radio"],
+.checkbox *[type="checkbox"] {
+  // fixes input[type=radio,checkbox] top margin.
+  // original theme definition break the current theme.
+  margin: 0;
+}
+
+// ----------------------------------
+// CSS Additions
+// -------------
+
+.navbar.navbar-form {
+  border-top: 1px solid $gray-light;
+
+  .nav li {
+    display: inline-block;
+  }
+}
