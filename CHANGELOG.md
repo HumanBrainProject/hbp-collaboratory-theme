@@ -1,3 +1,12 @@
+<a name="0.0.4"></a>
+### 0.0.4 (2015-03-17)
+
+
+#### Features
+
+* **basics:** Fonts and Importation (https://bbpteam.epfl.ch/reps/gerrit/platform/hbp/collaboratory-theme/commit/?id=d7565dac3d1b126531c41342ef2c985d47b95c31)
+
+
 <a name="0.0.3"></a>
 ### 0.0.3 (2015-03-13)
 
