@@ -19,9 +19,26 @@
 // -------------
 
 .navbar.navbar-form {
+  border-bottom: 1px solid $gray-light;
   border-top: 1px solid $gray-light;
+  height: 36px;
+  margin: 0;
+  padding: $padding-base-vertical 0;
+
+  .navbar-nav {
+    margin: 0;
+  }
 
   .nav li {
     display: inline-block;
+    margin: 0 $grid-gutter-width/2;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
   }
 }
