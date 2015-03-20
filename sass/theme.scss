@@ -42,3 +42,15 @@
     }
   }
 }
+
+
+.btn {
+  // Buttons active state
+  &:active,
+  &.active {
+    background-color: $brand-primary;
+    background-image: none;
+    box-shadow: none;
+    outline: 0;
+  }
+}
