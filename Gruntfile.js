@@ -72,7 +72,9 @@ module.exports = function (grunt) {
             cwd: '<%= bowerDirectory %>/bootstrap-sass/assets/stylesheets',
             src: ['**', '!_bootstrap-*.scss'],
             dest: 'dist/sass/'
-          }
+          },
+          // All Bootstrap javascript files
+          {expand: true, cwd: '<%= bowerDirectory %>/bootstrap-sass/assets/', src: ['javascripts/bootstrap.*'], dest: 'dist/'},
         ]
       },
       fonts: {
