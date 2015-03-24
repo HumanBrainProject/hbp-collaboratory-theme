@@ -1,3 +1,19 @@
+<a name="0.0.6"></a>
+### 0.0.6 (2015-03-24)
+
+
+#### Bug Fixes
+
+* **build:**
+  * bower.json list all fonts (https://bbpteam.epfl.ch/reps/gerrit/platform/hbp/collaboratory-theme/commit/?id=78f681bee5fb27ba15a4086423f100d264e68dfb)
+  * include bootstrap js files (https://bbpteam.epfl.ch/reps/gerrit/platform/hbp/collaboratory-theme/commit/?id=a0b7e021207abe25168de11602597618b2446d1e)
+
+
+#### Features
+
+* **doc:** basic usage documentation (https://bbpteam.epfl.ch/reps/gerrit/platform/hbp/collaboratory-theme/commit/?id=0302670a8714cd69cb50d5dd99fe3a974a387027)
+
+
 <a name="0.0.5"></a>
 ### 0.0.5 (2015-03-23)
 
