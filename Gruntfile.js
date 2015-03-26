@@ -196,7 +196,7 @@ module.exports = function (grunt) {
     grunt.task.run(tasks);
   });
 
-  grunt.registerTask('serve', ['clean', 'sass', 'copy:fonts', 'assemble', 'connect', 'watch']);
+  grunt.registerTask('serve', ['clean', 'sass', 'copy:fonts', 'assemble', 'copy:ci', 'connect', 'watch']);
 
   // Disable scsslint until Jenkins issue has been resolved:
   // see: https://bbpteam.epfl.ch/project/issues/servicedesk/agent/HELP/issue/HELP-3252
