@@ -3,7 +3,6 @@
 // --------------------------------------------------
 $gotham-font-path: '../fonts/' !default;
 
-
 // Global values
 // --------------------------------------------------
 
@@ -89,6 +88,7 @@ $component-active-bg:            $brand-primary !default;
 
 $caret-width-base:               4px !default;
 $caret-width-large:              5px !default;
+
 
 // Tables
 // -------------------------
@@ -572,6 +572,15 @@ $carousel-indicator-active-bg:                $white !default;
 $carousel-indicator-border-color:             $white !default;
 
 $carousel-caption-color:                      $white !default;
+
+
+// DL Horizontal list
+// -------------------------
+
+// The definition-list when displayed horizontaly use the grid layout in
+// this theme.
+$dl-horizontal-dt-columns: 3 !default;
+$dl-horizontal-dd-columns: $grid-columns - $dl-horizontal-dt-columns !default;
 
 
 // Close
