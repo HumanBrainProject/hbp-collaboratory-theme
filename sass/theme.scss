@@ -1,8 +1,15 @@
+// override variables
 @import 'variables';
+// load fonts
 @import 'gotham';
+
+// import bootstrap original theme
 @import 'bootstrap';
+
+// customization of the theme
 @import 'list-group-improvement';
 @import 'generated-icon';
+@import 'dl';
 
 // ----------------------------------
 // CSS Fixes
