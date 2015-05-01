@@ -26,7 +26,7 @@ module.exports = function (grunt) {
     sass: {
       options: {
         sourceMap: true,
-        includePaths: ['<%= bowerDirectory %>/bootstrap-sass/assets/stylesheets']
+        includePaths: ['sass', '<%= bowerDirectory %>/bootstrap-sass/assets/stylesheets']
       },
       dist: {
         files: {
@@ -64,8 +64,6 @@ module.exports = function (grunt) {
         files: [
           // all .tmp/dist directory
           {expand: true, cwd: '.tmp/dist', src: ['**'], dest: 'dist/'},
-          // all sass file to dist/sass
-          {expand: true, src: ['sass/*'], dest: 'dist/'},
           // Bootstrap sass files
           {
             expand: true,
@@ -73,6 +71,8 @@ module.exports = function (grunt) {
             src: ['**', '!_bootstrap-*.scss'],
             dest: 'dist/sass/'
           },
+          // all sass file to dist/sass
+          {expand: true, src: ['sass/**/*'], dest: 'dist/'},
           // All Bootstrap javascript files
           {expand: true, cwd: '<%= bowerDirectory %>/bootstrap-sass/assets/', src: ['javascripts/bootstrap.*'], dest: 'dist/'},
         ]
@@ -96,7 +96,7 @@ module.exports = function (grunt) {
 
     watch: {
       sass: {
-        files: ['sass/*.scss'],
+        files: ['sass/**/*.scss'],
         tasks: ['sass:dist'],
         options: {
           livereload: true
