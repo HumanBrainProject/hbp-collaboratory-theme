@@ -16,11 +16,18 @@
 // ---------
 
 // Position radios and checkboxes better
-.radio *[type="radio"],
-.checkbox *[type="checkbox"] {
-  // fixes input[type=radio,checkbox] top margin.
-  // original theme definition break the current theme.
-  margin: 0;
+.radio,
+.checkbox {
+  *[type="radio"],
+  *[type="checkbox"] {
+    // fixes input[type=radio,checkbox] top margin.
+    // original theme definition break the current theme.
+    margin: 0;
+  }
+  
+  label {
+    padding-left: 23px;
+  }
 }
 
 // ----------------------------------
