@@ -1,4 +1,4 @@
-# collaboratory-theme
+# hbp-collaboratory-theme
 
 A Bootstrap 3 Theme for HBP Collaboratory Extensions
 
