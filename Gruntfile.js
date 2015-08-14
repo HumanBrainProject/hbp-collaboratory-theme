@@ -20,7 +20,7 @@ module.exports = function (grunt) {
         bundleExec: true,
         reporterOutput: 'reports/scss-lint-report.xml',
         colorizeOutput: true
-      },
+      }
     },
 
     sass: {
@@ -74,7 +74,7 @@ module.exports = function (grunt) {
           // all sass file to dist/sass
           {expand: true, src: ['sass/**/*'], dest: 'dist/'},
           // All Bootstrap javascript files
-          {expand: true, cwd: '<%= bowerDirectory %>/bootstrap-sass/assets/', src: ['javascripts/bootstrap.*'], dest: 'dist/'},
+          {expand: true, cwd: '<%= bowerDirectory %>/bootstrap-sass/assets/', src: ['javascripts/bootstrap.*'], dest: 'dist/'}
         ]
       },
       fonts: {
@@ -82,7 +82,7 @@ module.exports = function (grunt) {
           // copy Bootstrap fonts
           {expand: true, cwd: '<%= bowerDirectory %>/bootstrap-sass/assets/fonts/bootstrap', src: ['**'], dest: '.tmp/dist/fonts'},
           // copy Gotham fonts
-          {expand: true, cwd: 'assets/fonts', src: ['**'], dest: '.tmp/dist/fonts'},
+          {expand: true, cwd: 'assets/fonts', src: ['**'], dest: '.tmp/dist/fonts'}
         ]
       }
     },
@@ -173,7 +173,7 @@ module.exports = function (grunt) {
 
     changelog: {
       options: {
-        commitLink: function(h) { return 'https://bbpteam.epfl.ch/reps/gerrit/platform/hbp/collaboratory-theme/commit/?id='+h; },
+        commitLink: function(h) { return 'https://bbpteam.epfl.ch/reps/gerrit/platform/hbp/collaboratory-theme/commit/?id=' + h; },
         issueLink: function(issueId) { return 'https://bbpteam.epfl.ch/project/issues/browse/' + issueId; }
       }
     }
@@ -190,8 +190,8 @@ module.exports = function (grunt) {
   grunt.registerTask('ci', function (target) {
     var tasks = ['default', 'copy:ci'];
     if (target === 'patch' || target === 'minor' || target === 'major') {
-      tasks.unshift('bump-only:'+target);
-      tasks.push('changelog', 'bump-commit', 'gitadd:dist','gitcommit:dist', 'gittag:dist', 'gitpush:dist');
+      tasks.unshift('bump-only:' + target);
+      tasks.push('changelog', 'bump-commit', 'gitadd:dist', 'gitcommit:dist', 'gittag:dist', 'gitpush:dist');
     }
     grunt.task.run(tasks);
   });

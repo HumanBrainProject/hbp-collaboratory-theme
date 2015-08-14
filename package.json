@@ -8,11 +8,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh://bbpcode.epfl.ch/platform/hbp/collaboratory-theme"
+    "url": "https://github.com/HumanBrainProject/hbp-collaboratory-theme"
   },
   "author": "Olivier Amblet <olivier.amblet@epfl.ch>",
-  "license": "-",
-  "private": true,
+  "license": "MIT",
   "devDependencies": {
     "assemble": "^0.4.42",
     "bower": "^1.3.12",
@@ -25,7 +24,7 @@
     "grunt-contrib-watch": "^0.6.1",
     "grunt-conventional-changelog": "^1.1.0",
     "grunt-git": "^0.3.4",
-    "grunt-sass": "^0.18.1",
+    "grunt-sass": "^1.0.0",
     "grunt-scss-lint": "^0.3.4",
     "load-grunt-tasks": "^3.1.0",
     "time-grunt": "^1.1.0"
