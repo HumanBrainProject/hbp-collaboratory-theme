@@ -2,6 +2,8 @@
 
 A Bootstrap 3 Theme for HBP Collaboratory Extensions
 
+[![Build Status](https://bbpcode.epfl.ch/ci/buildStatus/icon?job=platform.collaboratory-theme.github&build=1)](https://bbpcode.epfl.ch/ci/job/platform.collaboratory-theme.github/1/)
+
 # Setup Collaboratory Theme
 
 This library package the HBP theme and Bootstrap so that you don't need to
