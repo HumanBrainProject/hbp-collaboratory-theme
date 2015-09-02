@@ -7,7 +7,7 @@ module.exports = function (grunt) {
 
   grunt.initConfig({
     bowerDirectory: require('bower').config.directory,
-    pkg: grunt.file.readJSON('package.json'),
+    pkg: grunt.file.readJSON('bower.json'),
 
 
     // -----------------------
@@ -176,6 +176,18 @@ module.exports = function (grunt) {
         commitLink: function(h) { return 'https://bbpteam.epfl.ch/reps/gerrit/platform/hbp/collaboratory-theme/commit/?id=' + h; },
         issueLink: function(issueId) { return 'https://bbpteam.epfl.ch/project/issues/browse/' + issueId; }
       }
+    },
+
+    exec: {
+      'compressDoc': 'cd dist && zip ../.tmp/<%= pkg.name %>.zip **/*',
+      'uploadDoc': [
+        'curl -X POST',
+        '-F filedata=@.tmp/<%= pkg.name %>.zip',
+        '-F name="HBP Collaboratory Theme"',
+        '-F version="<%= pkg.version %>"',
+        '-F description="<%= pkg.description %>"',
+        'http://bbpgb027.epfl.ch:5000/docs/hmd'
+      ].join(' ')
     }
   });
 
@@ -191,7 +203,7 @@ module.exports = function (grunt) {
     var tasks = ['default', 'copy:ci'];
     if (target === 'patch' || target === 'minor' || target === 'major') {
       tasks.unshift('bump-only:' + target);
-      tasks.push('changelog', 'bump-commit', 'gitadd:dist', 'gitcommit:dist', 'gittag:dist', 'gitpush:dist');
+      tasks.push('changelog', 'bump-commit', 'gitadd:dist', 'gitcommit:dist', 'gittag:dist', 'gitpush:dist', 'exec:compressDoc', 'exec:uploadDoc');
     }
     grunt.task.run(tasks);
   });
