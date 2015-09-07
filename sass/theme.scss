@@ -10,6 +10,7 @@
 @import 'list-group-improvement';
 @import 'generated-icon';
 @import 'dl';
+@import 'type';
 
 // ----------------------------------
 // CSS Fixes
@@ -24,7 +25,7 @@
     // original theme definition break the current theme.
     margin: 0;
   }
-  
+
   label {
     padding-left: 23px;
   }
