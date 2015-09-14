@@ -35,23 +35,6 @@
 // CSS Additions
 // -------------
 
-// remove margin from fluid-container
-
-.container-fluid {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-// make-row mixins has been modified as well, see mixins/_make-row.scss
-
-.row > [class*="col-"]:first-child {
-  padding-left: 0;
-}
-
-.row > [class*="col-"]:last-child {
-  padding-right: 0;
-}
-
 // navbar-form
 
 .navbar.navbar-form {

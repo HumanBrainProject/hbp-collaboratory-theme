@@ -4,9 +4,6 @@
 @import 'bootstrap/variables';
 @import 'bootstrap/mixins';
 
-// Overloaded variables and Mixins
-@import 'mixins/make-row';
-
 // Reset and dependencies
 @import 'bootstrap/normalize';
 @import 'bootstrap/print';
