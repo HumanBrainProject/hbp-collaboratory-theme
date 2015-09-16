@@ -2,7 +2,7 @@
 // .list-inline class.
 .list-comma-separated {
   > li:after {
-    content: ', ';
+    content: ',\00a0';
   }
 
   > li:last-child:after {
