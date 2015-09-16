@@ -179,7 +179,7 @@ module.exports = function (grunt) {
     },
 
     exec: {
-      'compressDoc': 'cd dist && zip ../.tmp/<%= pkg.name %>.zip **/*',
+      'compressDoc': 'cd dist && zip ../.tmp/<%= pkg.name %>.zip *.* **/*.*',
       'uploadDoc': [
         'curl -X POST',
         '-F filedata=@.tmp/<%= pkg.name %>.zip',
