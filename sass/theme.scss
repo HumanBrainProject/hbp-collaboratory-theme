@@ -34,6 +34,49 @@
 // CSS Additions
 // -------------
 
+// Make page header similar to h2
+.page-header{
+    font-size: 24px;
+}
+
+// Title sizes overriding
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 25px;
+}
+
+h3 {
+    font-size: 21px;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+h5 {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+h6 {
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Default thumbnail in Bootstrap has a border, we remove that 
+for we use thumbnail style to lay out images in multi column 
+pages on simple white background where border is undesired */
+.row .thumbnail {
+    border:0;
+    box-shadow:0;
+    border-radius:0;
+}
+
+
 // navbar-form
 
 .navbar.navbar-form {
