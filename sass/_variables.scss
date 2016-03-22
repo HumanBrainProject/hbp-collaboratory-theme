@@ -18,14 +18,14 @@ $white-transluant:       rgba($white, .8) !default;
 // -------------------------
 
 // Could also be #3EA0DA, depending on HBP identity renewal
-$brand-primary:         #82BBC4 !default; // was F4D430 in v1
-$brand-primary-derivative : #85C1CF !default; // not yet used
-$brand-secondary:       #FED000 !default;
+$brand-primary: #f4d430 !default; // was F4D430 in v1
+$brand-primary-derivative : #fed000 !default; // not yet used
+$brand-secondary: #f4d430 !default;
 // Secondary and n-ary colors are to be adjusted/controlled later when HBP identity is complete
 $brand-success:         #5cb85c !default;
 $brand-warning:         #f0ad4e !default;
 $brand-danger:          #d9534f !default;
-$brand-info:            $brand-primary !default; // was #5bc0de in v1
+$brand-info:            #82BBC4 !default; // was #5bc0de in v1
 
 // Scaffolding
 // -------------------------
