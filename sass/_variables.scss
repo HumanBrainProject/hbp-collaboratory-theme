@@ -17,11 +17,15 @@ $white-transluant:       rgba($white, .8) !default;
 // Brand colors
 // -------------------------
 
-$brand-primary:         #f4d430 !default;
+// Could also be #3EA0DA, depending on HBP identity renewal
+$brand-primary:         #82BBC4 !default; // was F4D430 in v1
+$brand-primary-derivative : #85C1CF !default; // not yet used
+$brand-secondary:       #FED000 !default;
+// Secondary and n-ary colors are to be adjusted/controlled later when HBP identity is complete
 $brand-success:         #5cb85c !default;
 $brand-warning:         #f0ad4e !default;
 $brand-danger:          #d9534f !default;
-$brand-info:            #5bc0de !default;
+$brand-info:            $brand-primary !default; // was #5bc0de in v1
 
 // Scaffolding
 // -------------------------
@@ -43,15 +47,15 @@ $font-family-serif:       Georgia, "Times New Roman", Times, serif          !def
 $font-family-monospace:   Monaco, Menlo, Consolas, "Courier New", monospace !default;
 $font-family-base:        $font-family-sans-serif                           !default;
 
-$font-size-base:          12px !default;
-$font-size-large:         ceil($font-size-base * 1.25)  !default; // ~18px
+$font-size-base:          14px !default;
+$font-size-large:         ceil($font-size-base * 1.15)  !default; // ~16px
 $font-size-small:         ceil($font-size-base * .85)   !default; // ~12px
 
 $line-height-base:        1.25                                       !default;
 $line-height-computed:    floor($font-size-base * $line-height-base) !default; // ~20px
 
 $headings-font-family:    $font-family-base  !default;
-$headings-font-weight:    500                !default;
+$headings-font-weight:    300                !default;
 $headings-line-height:    1.1                !default;
 
 // Iconography
@@ -111,7 +115,7 @@ $btn-default-bg:                 $white !default;
 $btn-default-border:             #ccc !default;
 
 $btn-primary-color:              $text-color !default;
-$btn-primary-bg:                 $brand-primary !default;
+$btn-primary-bg:                 $brand-secondary !default;
 $btn-primary-border:             darken($btn-primary-bg, 5%) !default;
 
 $btn-success-color:              $white !default;
