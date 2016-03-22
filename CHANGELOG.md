@@ -1,3 +1,12 @@
+<a name"0.1.0"></a>
+## 0.1.0 (2016-03-22)
+
+
+#### Features
+
+* **animation:** add hbp-spinning animation (https://bbpteam.epfl.ch/reps/gerrit/platform/hbp/collaboratory-theme/commit/?id=b48a4dfb39f9f92955b8cdc187aa886fa7d03c81)
+
+
 <a name"0.0.18"></a>
 ### 0.0.18 (2015-10-26)
 
