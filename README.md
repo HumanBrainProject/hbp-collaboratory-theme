@@ -11,8 +11,6 @@ import both libraries.
 
 ## Install with Bower
 
-Install the theme component using HBP Bower registry (http://bbpcode.epfl.ch/repositories/bower).
-
 ```
 bower install hbp-collaboratory-theme
 ```
